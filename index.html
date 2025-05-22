@@ -287,41 +287,26 @@
     </div>
 
     <script>
-        document.getElementById('generateIntentionBtn').addEventListener('click', async () => {
+        // Lista de intenções pré-definidas
+        const intentions = [
+            "Hoje, eu me permito destravar meu potencial e brilhar.",
+            "Eu ativo a prosperidade em meu negócio com confiança e clareza.",
+            "Minha voz é importante e eu me expresso com autenticidade.",
+            "Eu mereço todo o sucesso e abundância que o universo tem a oferecer.",
+            "Com foco e leveza, eu manifesto meus sonhos e objetivos.",
+            "Eu libero crenças limitantes e abraço minha força interior.",
+            "Meu propósito me guia e me impulsiona a criar com alma.",
+            "A cada passo, eu celebro minhas conquistas e aprendizados.",
+            "Eu confio na minha intuição para tomar as melhores decisões para o meu negócio.",
+            "Hoje, eu escolho a coragem em vez do medo e avanço com determinação."
+        ];
+
+        document.getElementById('generateIntentionBtn').addEventListener('click', () => {
             const outputDiv = document.getElementById('intentionOutput');
-            outputDiv.textContent = 'Gerando sua intenção...'; // Mensagem de carregamento
-
-            const prompt = `Crie uma intenção diária curta e inspiradora para mulheres empreendedoras, focada em temas como destravamento interior, ativação de negócios, clareza, confiança, prosperidade, merecimento, foco, leveza e propósito. A intenção deve ser empoderadora e positiva.`;
-
-            let chatHistory = [];
-            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-            const payload = { contents: chatHistory };
-            const apiKey = ""; // A chave da API será fornecida automaticamente pelo ambiente Canvas
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    outputDiv.textContent = text; // Exibe a intenção gerada
-                } else {
-                    outputDiv.textContent = 'Não foi possível gerar a intenção. Tente novamente.';
-                    console.error('Estrutura de resposta inesperada:', result);
-                }
-            } catch (error) {
-                outputDiv.textContent = 'Erro ao conectar com a API. Verifique sua conexão.';
-                console.error('Erro na chamada da API Gemini:', error);
-            }
+            // Escolhe uma intenção aleatória da lista
+            const randomIndex = Math.floor(Math.random() * intentions.length);
+            const randomIntention = intentions[randomIndex];
+            outputDiv.textContent = randomIntention; // Exibe a intenção escolhida
         });
     </script>
 </body>
