@@ -3,325 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Comercial – Plataforma Veterinária com Inteligência Artificial</title>
+    <title>Mentoria Mulheres Gerando Riqueza</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#10B981', // Um verde vibrante para destaque
-                        secondary: '#3B82F6', // Um azul para acentuação
-                        dark: '#1F2937', // Cor escura para texto principal
-                        light: '#F9FAFB', // Cor clara para fundos
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6; /* Um tom terroso claro para o fundo */
+            color: #4a4a4a; /* Cor de texto padrão */
         }
-        /* Estilos para a tabela de planos para melhor visualização em dispositivos móveis */
+        .container-page {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Cantos mais arredondados */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+            position: relative;
+            overflow: hidden; /* Para garantir que elementos internos não vazem */
+        }
+        .gold-accent {
+            color: #d4af37; /* Dourado */
+        }
+        .wine-color {
+            color: #800020; /* Vinho */
+        }
+        .earth-tone-dark {
+            color: #5c4033; /* Tom terroso escuro */
+        }
+        .earth-tone-light {
+            background-color: #f5f5dc; /* Tom terroso claro */
+        }
+        .border-gold {
+            border-color: #d4af37;
+        }
+        .bg-wine {
+            background-color: #800020;
+        }
+        .bg-gradient-gold-wine {
+            background: linear-gradient(to right, #d4af37, #800020);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #d4af37; /* Linha dourada sob o título */
+            border-radius: 2px;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #fdfaf6 0%, #fae8d7 100%); /* Gradiente suave para a capa */
+            padding: 6rem 2rem;
+            text-align: center;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #800020; /* Vinho para o título principal */
+        }
+        /* Aumentado o tamanho da fonte para o subtítulo e alterado a cor */
+        .hero-subtitle {
+            font-size: 2.25rem; /* Equivalente a text-4xl */
+            font-weight: 400;
+            color: #5c4033; /* Tom terroso escuro para o subtítulo */
+        }
         @media (max-width: 768px) {
-            .table-responsive {
-                overflow-x: auto;
+            .container-page {
+                margin: 2rem auto;
+                padding: 1rem;
             }
-            .table-responsive table {
-                min-width: 600px; /* Garante que a tabela não fique muito espremida */
+            .hero-title {
+                font-size: 2.5rem;
             }
+            /* Ajuste para o tamanho do subtítulo em telas menores */
+            .hero-subtitle {
+                font-size: 1.75rem; /* Equivalente a text-3xl em telas menores */
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        /* Estilos para o botão LLM */
+        .llm-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, #d4af37, #800020); /* Gradiente dourado-vinho */
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+        .llm-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .llm-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+        .llm-button svg {
+            margin-right: 0.5rem;
+        }
+        .llm-output {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f5f5dc; /* Tom terroso claro */
+            border-left: 5px solid #d4af37; /* Borda dourada */
+            border-radius: 0.5rem;
+            font-style: italic;
+            color: #5c4033;
+            min-height: 50px; /* Garante que o div tenha uma altura mínima */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
     </style>
 </head>
-<body class="bg-light text-dark leading-relaxed">
+<body>
 
-    <header class="bg-gradient-to-r from-primary to-emerald-500 text-white py-16 px-4 sm:px-6 lg:px-8 rounded-b-3xl shadow-lg">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-                Proposta Comercial
-            </h1>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">
-                Plataforma Veterinária com Inteligência Artificial
-            </h2>
-            <p class="text-lg sm:text-xl opacity-90 mb-4">
-                Desenvolvido por <span class="font-bold">Guillen IA</span>
-            </p>
-            </div>
-    </header>
+    <div class="container-page hero-section">
+        <h1 class="hero-title">MENTORIA MULHERES GERANDO RIQUEZA:</h1>
+        <h2 class="hero-subtitle earth-tone-dark font-bold">Destrave seu interior, Ative seu negócio.</h2>
+        <p class="mt-8 text-xl text-earth-tone-dark">
+            Uma jornada de 8 encontros com Constelação Sistêmica, para mulheres que empreendem com alma — e sentem que algo ainda trava o seu sucesso.
+        </p>
+    </div>
 
-    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container-page">
+        <h3 class="section-title wine-color">Desvende Seu Potencial</h3>
+        <p class="text-lg leading-relaxed mb-6">
+            Você já investiu em cursos, ideias e sonhos. Mas algo ainda parece travar.
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+            Você sente que nasceu para algo grande, mas quando tenta vender, se posicionar ou se mostrar… trava, se sabota ou se desconecta de si mesma?
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+            Talvez o problema não esteja no que você faz, e sim em como você se sente ao fazer.
+        </p>
+        <p class="text-xl font-semibold gold-accent text-center">
+            Essa Mentoria é para destravar o que te impede de florescer com clareza, confiança e prosperidade.
+        </p>
+    </div>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Transformando a Gestão Veterinária</h3>
-            <p class="text-lg mb-4">
-                No cenário dinâmico das clínicas veterinárias, sabemos o quanto a gestão eficiente, o atendimento de qualidade e a fidelização de tutores são cruciais. A correria do dia a dia muitas vezes dificulta o acompanhamento completo dos pets, a comunicação ágil e a otimização dos processos.
-            </p>
-            <p class="text-lg">
-                É pensando nesses desafios que a Guillen IA desenvolveu uma solução completa para transformar a forma como sua clínica se conecta com seus clientes e gerencia suas operações, **liberando sua equipe para focar no que realmente importa: a saúde e o bem-estar dos animais.**
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">A Solução: Sistema de Gestão Veterinária Multicanal com IA</h3>
-            <p class="text-lg mb-4">
-                A solução desenvolvida pela Guillen IA é um sistema **integrado, centralizado e moderno** que conecta clínicas veterinárias, tutores de pets e toda a equipe de atendimento, oferecendo uma experiência única em três canais principais: **aplicativo mobile, site responsivo e agente de IA conversacional no WhatsApp.** Todas as informações ficam armazenadas com segurança em um banco de dados unificado (Supabase), permitindo acesso, consulta, atualização e envio de dados em tempo real, a partir de qualquer um dos canais.
-            </p>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Onde tudo fica armazenado e como funciona o acesso</h4>
-            <p class="text-lg mb-4">
-                No núcleo do sistema está o <span class="font-bold">Supabase</span>, um banco de dados central e seguro, onde ficam guardados:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Informações detalhadas dos animais:</span> nome, espécie, raça, data de nascimento, sexo, peso (com histórico de evolução), microchip, personalidade, observações, histórico médico completo (diagnósticos, cirurgias, consultas, eventos), vacinas (com todos os dados de fabricante, lote, validade), medicações (controle periódico), dieta (tipo, marca, quantidade, frequência).</li>
-                <li><span class="font-medium">Anexos:</span> exames, fotos de lesões, receituários, cartão de vacinas digital, laudos e atestados. Todos esses arquivos podem ser consultados, baixados ou enviados automaticamente pelo agente de IA, a pedido do tutor.</li>
-                <li><span class="font-medium">Informações dos tutores:</span> nome, telefone, e-mail, endereço, podendo vincular vários animais a um tutor e vários tutores a um animal (para famílias, sócios ou responsáveis).</li>
-                <li><span class="font-medium">Agenda e lembretes:</span> agendamentos de banhos, tosas, consultas, lembretes de vacinas e medicações, datas comemorativas (aniversário do pet, promoções) e eventos personalizados.</li>
-                <li><span class="font-medium">Dados administrativos e configurações:</span> informações da clínica, veterinários, perfis de acesso e personalização do sistema, incluindo a identidade visual.</li>
+    <div class="container-page">
+        <h3 class="section-title wine-color">A Mentoria MULHERES GERANDO RIQUEZA para Empreendedoras</h3>
+        <p class="text-lg leading-relaxed mb-6">
+            Um espaço íntimo, terapêutico e potente, para empreendedoras que querem sair da confusão e do medo, e acessar sua verdade interna, seu poder pessoal e sua visão de negócio conectada com propósito.
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+            Serão 8 encontros online, ao vivo, onde vamos trabalhar juntas temas que te impedem de VIVER SEUS SONHOS ATRAVES DE SEU NÉGOCIO, de vender, cobrar, aparecer, criar e sustentar o seu negócio com prazer e leveza.
+        </p>
+        <div class="bg-earth-tone-light p-6 rounded-xl shadow-inner mt-8">
+            <h4 class="text-xl font-bold wine-color mb-4">Essa Mentoria une:</h4>
+            <ul class="list-disc list-inside text-lg space-y-2">
+                <li class="gold-accent"><span class="text-earth-tone-dark">Constelação Sistêmica em grupo</span></li>
+                <li class="gold-accent"><span class="text-earth-tone-dark">Práticas de desbloqueio emocional e energético</span></li>
+                <li class="gold-accent"><span class="text-earth-tone-dark">Exercícios de aterramento, clareza e foco</span></li>
+                <li class="gold-accent"><span class="text-earth-tone-dark">Ritual de abertura e encerramento</span></li>
             </ul>
+        </div>
+    </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Personalização e Expansão de Conhecimento</h4>
-            <p class="text-lg mb-4">
-                O administrador pode editar diretamente um documento Word específico, utilizado para alimentar a memória RAG do agente. Ao salvar ou remover informações neste Word, o agente aprende ou esquece imediatamente tudo de forma prática e controlada pela própria clínica. Assim, a IA pode responder perguntas personalizadas sobre a clínica, enviar mensagens de boas-vindas exclusivas e explicar procedimentos de acordo com o protocolo de cada empresa.
-            </p>
+    <div class="container-page">
+        <h3 class="section-title wine-color">Para Quem É Essa Jornada</h3>
+        <p class="text-lg leading-relaxed mb-4">Esta mentoria é ideal para mulheres que:</p>
+        <ul class="list-disc list-inside text-lg space-y-3">
+            <li class="gold-accent"><span class="text-earth-tone-dark">Já empreendem mas sentem que estão travadas para expandir</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Querem começar um novo projeto com mais coragem, foco e direção</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Sentem vergonha ou medo de vender, cobrar ou se expor</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Estão cansadas de fazer mil cursos e não conseguirem fluir</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Desejam empreender com alma, prazer e presença</span></li>
+        </ul>
+    </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Integrações Avançadas (expansíveis)</h4>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Google Calendar:</span> O agente pode integrar-se ao Google Agenda da clínica, agendando consultas, banhos e vacinas de forma sincronizada, inclusive enviando avisos automáticos ao tutor pouco antes do evento.</li>
-                <li><span class="font-medium">Google Tasks:</span> O administrador pode adicionar tarefas diretamente pelo WhatsApp (texto ou comando de voz), como “lembrar de enviar campanha de vacina segunda-feira”, tornando a rotina da clínica muito mais organizada.</li>
+    <div class="container-page">
+        <h3 class="section-title wine-color">O Que Vamos Trabalhar em Cada Encontro</h3>
+        <ol class="list-decimal list-inside text-lg space-y-3">
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Destravando o interior</strong> – o medo de aparecer e ser julgada</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Vender é servir</strong> – curando a relação com o dinheiro e a troca</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>O direito de receber</strong> – merecimento e prosperidade</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Foco e direção</strong> – limpando o excesso de ideias e distrações</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Família e sucesso</strong> – lealdades invisíveis que sabotam</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Culpa, controle e autocobrança</strong> – ressignificando o esforço</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Negócio com alma</strong> – empreender de forma leve e alinhada</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Ritual de Encerramento</strong> – integração e visão de futuro</span></li>
+        </ol>
+    </div>
+
+    <div class="container-page">
+        <h3 class="section-title wine-color">Detalhes Práticos</h3>
+        <ul class="list-disc list-inside text-lg space-y-3 mb-6">
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Formato:</strong> online (via Meet ou Zoom)</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Duração:</strong> 8 encontros, com 3h cada</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Início:</strong> Quinta-feira às 19h</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Vagas:</strong> limitadas</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark"><strong>Grupo de apoio:</strong> WhatsApp com conteúdos e provocações</span></li>
+        </ul>
+        <div class="bg-earth-tone-light p-6 rounded-xl shadow-inner mt-8">
+            <h4 class="text-xl font-bold wine-color mb-4">Bônus Exclusivos:</h4>
+            <ul class="list-disc list-inside text-lg space-y-2">
+                <li class="gold-accent"><span class="text-earth-tone-dark">Meditação de alinhamento com propósito</span></li>
+                <li class="gold-accent"><span class="text-earth-tone-dark">Sorteio de 1 constelação individual</span></li>
             </ul>
-            <p class="text-lg mt-4">
-                Todas essas integrações são opcionais e podem ser expandidas conforme as necessidades da clínica evoluam.
-            </p>
+        </div>
+    </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Segurança e Controle</h4>
-            <p class="text-lg mb-4">
-                Toda informação é protegida com as melhores práticas de segurança digital:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li>Dados criptografados, backups automáticos, permissões individualizadas.</li>
-                <li>O tutor só acessa informações dos seus animais; o veterinário/admin tem visão global.</li>
-                <li>Relatórios de acessos, movimentação de dados, histórico vitalício e possibilidade de auditoria.</li>
-            </ul>
+    <div class="container-page text-center">
+        <h3 class="section-title wine-color">✨ Sua Intenção do Dia ✨</h3>
+        <p class="text-lg leading-relaxed mb-6">
+            Clique no botão abaixo para receber uma intenção diária inspiradora, alinhada com a energia da Mentoria Mulheres Gerando Riqueza.
+        </p>
+        <button id="generateIntentionBtn" class="llm-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M9.93 17.71a3 3 0 1 0 3.14 3.14"/><path d="M19.08 6.52a3 3 0 1 0 3.15 3.15"/><path d="M3.47 6.84a3 3 0 1 0 3.15 3.15"/><path d="M12 2v.01"/><path d="M12 12v.01"/><path d="M12 22v.01"/><path d="M2 12h.01"/><path d="M22 12h.01"/><path d="M7.5 7.5l.01.01"/><path d="M17.5 17.5l.01.01"/></svg>
+            Gerar Intenção
+        </button>
+        <div id="intentionOutput" class="llm-output">
+            Sua intenção aparecerá aqui...
+        </div>
+    </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Monetização para a Clínica</h4>
-            <p class="text-lg mb-4">
-                A plataforma permite criar clubes de assinatura premium, como “Clube do Pet”, dando acesso exclusivo a lembretes personalizados, atendimento instantâneo 24h pelo WhatsApp, documentos digitais, novidades e promoções. A cobrança é mensal, criando uma nova fonte de receita para a clínica e aumentando o valor percebido do atendimento.
-            </p>
+    <div class="container-page text-center">
+        <h3 class="section-title wine-color">Valor de Troca</h3>
+        <p class="text-3xl font-bold gold-accent mb-4">R$697 à vista</p>
+        <p class="text-2xl font-semibold wine-color mb-6">ou 3x de R$250 (Pix)</p>
+        <p class="text-xl text-earth-tone-dark mb-2">Pix (cpf): <span class="font-bold">012.491.955-35</span></p>
+        <p class="text-xl text-earth-tone-dark mb-8">
+            Cartão: Até 10x (solicite o link no contato <span class="font-bold gold-accent">73 98173-7032</span>)
+        </p>
+        <p class="text-lg leading-relaxed">
+            Este valor é para todas as mulheres comprometidas com sua jornada de cura e prontas para ativar sua potência empreendedora.
+        </p>
+    </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Diferenciais Estratégicos</h4>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li>Atendimento multicanal (WhatsApp, App, Site), sem perda de informação ou atraso.</li>
-                <li>Personalização completa da comunicação, identidade visual e funcionalidades.</li>
-                <li>Pronto para ser expandido com outras integrações e módulos sob medida.</li>
-                <li>Facilita o engajamento do tutor e a organização da clínica.</li>
-                <li>Destaca a clínica como referência em inovação e atendimento inteligente.</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold text-primary mb-3 mt-8 text-center">Em Resumo:</h4>
-            <p class="text-lg text-center font-medium">
-                O sistema Guillen IA transforma o relacionamento veterinário-tutor em todos os níveis, centralizando dados, automatizando atendimento, organizando a rotina e aumentando a receita do negócio — com tecnologia de ponta, comunicação humanizada e a marca da clínica em cada detalhe.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Identidade Visual e Personalização</h3>
-            <p class="text-lg mb-4">
-                O sistema é totalmente personalizado com o **nome, logotipo e cores da sua clínica**, garantindo uma experiência coesa e profissional para seus clientes.
-            </p>
-            <p class="text-lg">
-                Desenvolvido pela Guillen IA, a identidade visual é adaptada conforme o perfil único do seu negócio, reforçando sua marca no mercado.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">O que é o Setup?</h3>
-            <p class="text-lg mb-4">
-                O setup é o **investimento inicial** que cobre o desenvolvimento, implantação e personalização completa do sistema para sua clínica, incluindo:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Códigos-fonte:</span> Do aplicativo mobile, sistema web e agente de IA.</li>
-                <li><span class="font-medium">Infraestrutura:</span> VPS, banco de dados, domínio, API, configuração de serviços e integrações.</li>
-                <li><span class="font-medium">Conhecimento e Customização:</span> Todo o conhecimento, criatividade e customização aplicados ao seu projeto.</li>
-                <li><span class="font-medium">Segurança, Arquitetura e Documentação:</span> Segurança, arquitetura, otimização de performance e documentação técnica.</li>
-            </ul>
-            <p class="text-lg mt-4">
-                Ao quitar o setup (planos que oferecem essa opção), a propriedade intelectual e técnica do sistema passa a ser sua. Assim, você pode evoluir, migrar ou contratar manutenção de quem quiser total independência.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Para que serve a Mensalidade?</h3>
-            <p class="text-lg mb-4">
-                A mensalidade cobre:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Suporte Técnico:</span> E atendimento contínuo.</li>
-                <li><span class="font-medium">Custo de IA:</span> Tokens e processamento de IA.</li>
-                <li><span class="font-medium">Hospedagem:</span> Em VPS e banco de dados seguro.</li>
-                <li><span class="font-medium">Atualizações e Manutenção:</span> Preventiva e corretiva.</li>
-                <li><span class="font-medium">Monitoramento e Backup:</span> De performance e backup de dados.</li>
-            </ul>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Canais de Atendimento Multicanal</h3>
-            <div class="space-y-6">
-                <div class="p-6 bg-blue-50 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-blue-200 pb-8">
-                    <svg class="w-16 h-16 text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">Aplicativo Mobile</h4>
-                    <p class="text-dark">
-                        No app, tutores e profissionais visualizam o histórico completo dos pets, com acesso fácil a dados médicos, vacinas, peso, anexos e agendamentos. O app é um canal prático para consulta e gestão das informações do pet, de forma segura e personalizada. Tutores não podem editar dados, apenas consultar; o veterinário e a equipe têm controle completo.
-                    </p>
+    <div class="container-page">
+        <h3 class="section-title wine-color">Sobre Quem Conduz</h3>
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="flex-shrink-0">
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-green-200 pb-8">
-                    <svg class="w-16 h-16 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 21L14.75 21L15.25 17M12 3C10.3431 3 9 4.34315 9 6V15C9 16.6569 10.3431 18 12 18C13.6569 18 15 16.6569 15 15V6C15 4.34315 13.6569 3 12 3Z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">Site Responsivo</h4>
-                    <p class="text-dark">
-                        No portal web, todas as informações ficam disponíveis de forma organizada e segura, com login individual, fácil acesso a fichas, anexos, histórico médico e agenda. Tutores podem acompanhar tudo do computador, compartilhar informações com familiares e acessar relatórios detalhados, sem instalar nada. É também pelo site que administradores podem gerenciar a base de dados, atualizar informações e monitorar o engajamento dos clientes.
-                    </p>
-                </div>
-                <div class="p-6 bg-purple-50 rounded-lg shadow-inner flex flex-col items-center text-center">
-                    <svg class="w-16 h-16 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">WhatsApp com Agente de IA</h4>
-                    <p class="text-dark">
-                        O grande diferencial é o agente de IA no WhatsApp, que conversa de forma humanizada e personalizada, conforme a identidade da clínica. O veterinário pode definir o perfil, o nome e o estilo de resposta seja mais técnico, descontraído, carinhoso ou focado em negócios. O tutor envia perguntas como “Qual o próximo banho do Thor?”, “Preciso do laudo da última consulta” ou “Como foi o comportamento do Simba na última tosa?” e o agente de IA responde em segundos, consultando o banco de dados central. Se pedir um documento ou exame, a IA busca e envia automaticamente pelo próprio WhatsApp. O canal também serve para envio automático de lembretes de vacina, banho, consultas e promoções, de acordo com o que está registrado na agenda central do sistema.
-                    </p>
-                </div>
+            <div>
+                <h4 class="text-2xl font-bold wine-color mb-2">Isadora Barreto</h4>
+                <p class="text-lg leading-relaxed mb-4">
+                    Terapeuta sistêmica, mentora e facilitadora de vivências e retiros de autoconhecimento. Criadora da Alquimisa — Experiências que Transformam. Engenheira de formação, com mais de 10 anos de atuação em processos de despertar, constelação, escuta emocional e vivências de reconexão.
+                </p>
+                <p class="text-lg leading-relaxed gold-accent font-semibold">
+                    Meu propósito é criar espaços e processos seguros, sensíveis e profundos onde as mulheres possam se lembrar de quem são e manifestar tudo o que vieram ser.
+                </p>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-6 text-center">Planos Comerciais Guillen IA</h3>
-            <div class="table-responsive">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-100 border-b border-gray-200">
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700 rounded-tl-lg">Plano</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Setup (Investimento Inicial)</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Mensalidade</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Compromisso Mínimo</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700 rounded-tr-lg">O que recebe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Liberdade Total</td>
-                            <td class="py-3 px-4 text-lg">R$ 6.500 (ou 12x de R$ 600)</td>
-                            <td class="py-3 px-4 text-lg">R$ 350</td>
-                            <td class="py-3 px-4 text-lg">Nenhum</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte, IA, banco de dados e integrações próprios após quitação</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">All-Inclusive</td>
-                            <td class="py-3 px-4 text-lg">Zero</td>
-                            <td class="py-3 px-4 text-lg">R$ 700</td>
-                            <td class="py-3 px-4 text-lg">6 meses</td>
-                            <td class="py-3 px-4 text-lg">Licença de uso total. Suporte, implantação e atualizações. Sem código-fonte</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Invest. Antecipado</td>
-                            <td class="py-3 px-4 text-lg">R$ 10.000</td>
-                            <td class="py-3 px-4 text-lg">Zero (1º ano)</td>
-                            <td class="py-3 px-4 text-lg">12 meses</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte, estrutura e documentação já na implantação</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Lite Start</td>
-                            <td class="py-3 px-4 text-lg">R$ 2.500</td>
-                            <td class="py-3 px-4 text-lg">R$ 250</td>
-                            <td class="py-3 px-4 text-lg">4 meses</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte do agente de IA WhatsApp, pronto para uso e customização</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg rounded-bl-lg">IA Express</td>
-                            <td class="py-3 px-4 text-lg">Zero</td>
-                            <td class="py-3 px-4 text-lg">R$ 420</td>
-                            <td class="py-3 px-4 text-lg">4 meses</td>
-                            <td class="py-3 px-4 text-lg rounded-br-lg">Apenas licença de uso do agente IA WhatsApp. Sem código-fonte</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+    <div class="container-page">
+        <h3 class="section-title wine-color">Como Se Inscrever?</h3>
+        <ol class="list-decimal list-inside text-lg space-y-3">
+            <li class="gold-accent"><span class="text-earth-tone-dark">Realize o pagamento para garantir sua vaga.</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Após o pagamento, você receberá o link do grupo de WhatsApp.</span></li>
+            <li class="gold-accent"><span class="text-earth-tone-dark">Lá você terá acesso às orientações e materiais de preparação.</span></li>
+        </ol>
+        <p class="text-xl font-semibold text-center mt-8">
+            Dúvidas? Me chame no WhatsApp: <span class="gold-accent">73 98173-7032</span>
+        </p>
+    </div>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Detalhamento dos Planos</h3>
+    <script>
+        document.getElementById('generateIntentionBtn').addEventListener('click', async () => {
+            const outputDiv = document.getElementById('intentionOutput');
+            outputDiv.textContent = 'Gerando sua intenção...'; // Mensagem de carregamento
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Liberdade Total</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Código-fonte, IA, banco de dados e integrações próprios após quitação do setup</li>
-                    <li>Mensalidade cobre suporte, manutenção e hospedagem</li>
-                    <li>Parcelamento em até 12x disponível</li>
-                    <li>Se cancelar antes de quitar o setup parcelado, paga o saldo do setup no ato do cancelamento</li>
-                    <li><span class="font-medium">Simulação:</span> Parcelando em 12x, paga R$ 600 (parcela do setup) + R$ 350 (mensalidade) = <span class="font-bold">R$ 950/mês no 1º ano</span>. Depois, apenas R$ 350/mês.</li>
-                </ul>
-            </div>
+            const prompt = `Crie uma intenção diária curta e inspiradora para mulheres empreendedoras, focada em temas como destravamento interior, ativação de negócios, clareza, confiança, prosperidade, merecimento, foco, leveza e propósito. A intenção deve ser empoderadora e positiva.`;
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">All-Inclusive Premium</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Licença de uso, implantação, personalização, suporte e infraestrutura inclusos</li>
-                    <li>Não entrega código-fonte</li>
-                    <li>Compromisso mínimo de 6 meses</li>
-                    <li>Cancelando antes, paga as mensalidades restantes até o compromisso mínimo</li>
-                </ul>
-            </div>
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Investimento Antecipado</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Pagamento único</li>
-                    <li>Código-fonte, estrutura e documentação entregues assim que o sistema está rodando</li>
-                    <li>Após o 1º ano, pode manter só manutenção/hospedagem</li>
-                </ul>
-            </div>
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // A chave da API será fornecida automaticamente pelo ambiente Canvas
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Lite Start</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Código-fonte do agente de IA no WhatsApp incluso</li>
-                    <li>Sem site, app ou integrações avançadas</li>
-                    <li>Pode migrar para outro plano aproveitando parte do investimento já feito</li>
-                    <li>Compromisso mínimo de 4 meses</li>
-                </ul>
-            </div>
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
-            <div class="mb-6">
-                <h4 class="text-xl font-semibold text-secondary mb-2">IA Express</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Apenas licença de uso do agente de IA no WhatsApp</li>
-                    <li>Sem site, app, integrações, personalização ou entrega de código-fonte</li>
-                    <li>Compromisso mínimo de 4 meses</li>
-                </ul>
-            </div>
-        </section>
+                const result = await response.json();
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Compromisso Mínimo</h3>
-            <p class="text-lg mb-4">
-                O compromisso mínimo é o tempo de permanência inicial exigido para garantir equilíbrio entre investimento e entrega de valor.
-            </p>
-            <p class="text-lg">
-                Após esse prazo, o cancelamento é livre, com aviso prévio, sem multas ou surpresas (exceto nos casos de setup parcelado).
-            </p>
-        </section>
-
-    </main>
-
-    <footer class="bg-dark text-white py-8 px-4 sm:px-6 lg:px-8 text-center rounded-t-3xl mt-12">
-        <p>&copy; 2025 Guillen IA. Todos os direitos reservados.</p>
-    </footer>
-
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.textContent = text; // Exibe a intenção gerada
+                } else {
+                    outputDiv.textContent = 'Não foi possível gerar a intenção. Tente novamente.';
+                    console.error('Estrutura de resposta inesperada:', result);
+                }
+            } catch (error) {
+                outputDiv.textContent = 'Erro ao conectar com a API. Verifique sua conexão.';
+                console.error('Erro na chamada da API Gemini:', error);
+            }
+        });
+    </script>
 </body>
 </html>
